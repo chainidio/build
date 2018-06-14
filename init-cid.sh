@@ -24,8 +24,8 @@ if [ ! -f "/cid/.init" ]; then
 	# Now time to get the NRS client
 	wget --no-check-certificate https://chainid.io/ChainPlatform.zip && \
 	unzip -o ChainPlatform.zip && \
-	rm *.zip *.asc && \
-	cd /cid && \
+	rm *.zip && \
+	cd /ChainPlatform && \
 	rm -Rf *.exe src changelogs
 
 	if [ -n "${PLUGINS-}" ]; then
@@ -78,5 +78,5 @@ else
 	echo -e " init-cid.sh: Init already done, skipping init."
 fi
 
-cd /cid
+cd /ChainPlatform
 ./run.sh
